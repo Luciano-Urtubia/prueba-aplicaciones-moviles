@@ -1,0 +1,86 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button autoHide="false"></ion-menu-button>
+
+  </ion-buttons>
+  <ion-buttons slot="secondary">
+    <ion-button>
+      <ion-icon defaultHref="home" slot="icon-only" name="home"></ion-icon>
+    </ion-button> 
+  </ion-buttons>
+  <ion-title>Conversor De Divisas</ion-title>
+</ion-toolbar>
+<ion-menu side="start" id="main"> contentId="main">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+
+<ion-content>
+
+<hr>
+<ionic-content>
+<h4><img src="https://images-na.ssl-images-amazon.com/images/I/61TuGfMmNOL.png" class="mx-auto"></h4>
+</ionic-content>
+
+
+<ion-card> 
+  <ion-list>
+    <ion-item>
+      <ion-label>Selecciones divisas</ion-label>
+      <ion-select [(ngModel)]="tipoMoneda">
+        <ion-select-option value="dolar" type="text">DLR</ion-select-option>
+        <ion-select-option value="euro" type="text">EUR</ion-select-option>
+        <ion-select-option value="clp" type="text">CLP</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Ingresa Cantidad</ion-label>
+      <ion-input [(ngModel)]="cantMoneda" type="number"></ion-input>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-label>Convertir a</ion-label>
+      <ion-select [(ngModel)]="tipoMoneda2">
+        <ion-select-option value="dolar" type="text">DLR</ion-select-option>
+        <ion-select-option value="euro" type="text">EUR</ion-select-option>
+        <ion-select-option value="clp" type="text">CLP</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    
+
+
+
+    <ion-button (click) = "dolareuro()"  (click)="mostrarDatosVacios()"  expand="full" color="tertiary">Convertir</ion-button>
+    
+    
+  </ion-list>
+     
+</ion-card> 
+<hr>
+<hr> 
+  <div *ngIf = "(valorPesos2 > 0)" >
+    <ion-card> 
+      <h3 id="resultado"> {{ valorPesos2 | currency: 'USD' | lowercase }}</h3>
+    </ion-card>  
+  </div>
+ 
+</ion-content>
+<app-footer></app-footer>

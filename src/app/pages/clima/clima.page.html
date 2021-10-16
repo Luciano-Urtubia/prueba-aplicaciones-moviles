@@ -1,0 +1,59 @@
+<ion-content padding class="background">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+  
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>El Clima</ion-title>
+  </ion-toolbar>
+  <ion-menu side="start" id="main"> contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Start Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+    <div class="row">
+      <div class="col-md-6">
+        <div>
+        <img src="http://www.danielecheverria.com/wp-content/uploads/2011/12/diciembre-sol_y_nubes.png" class="mx-auto">
+          <form (submit)="submitLocation(cityName, cityCode)">
+            
+            <input type="text" placeholder="City Name" class="form-control" autofocus #cityName>
+            <input type="text" placeholder="City Code" class="form-control" #cityCode>
+            <button class="btn btn-primary btn-block mt-2">
+              Mostrar Clima
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="text-center">
+        <div *ngIf="weather" class="card card-body text-center">
+          <h1 class="h4">Weather Information</h1>
+          <p>City: {{weather.name}}</p>
+          <p>Latitude: {{weather.coord.lat}}</p>
+          <p>Longitude: {{weather.coord.lon}}</p>
+          <p>Humidity: {{weather.main.humidity}}</p>
+          <p>Pressure: {{weather.main.pressure}}</p>
+          <p>Temperature: {{weather.main.temp}} °C</p>
+          <p>Description: {{weather.weather[0].description }}</p>
+        </div>
+      </div>
+    </div>
+  
+</ion-content>
+
