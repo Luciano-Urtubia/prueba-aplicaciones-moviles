@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },
+
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'conversor',
@@ -28,6 +29,26 @@ const routes: Routes = [
     path: 'personajes/:id',
     loadChildren: () => import('./pages/personajes/personajes.module').then( m => m.PersonajesPageModule)
   },
+  {
+    path: 'crud-personajes',
+    loadChildren: () => import('./pages/crud-personajes/crud-personajes.module').then( m => m.CrudPersonajesPageModule)
+  },
+  {
+    path: 'monitoss',
+    redirectTo: 'monitoss', 
+  },
+  {
+    path: 'monitoss/:id',
+    loadChildren: () => import('./pages/monitoss/monitoss.module').then( m => m.MonitossPageModule)
+  },
+ 
+  {
+    path: '**',
+    redirectTo: 'home'
+  },
+ 
+ 
+ 
 
 ];
 

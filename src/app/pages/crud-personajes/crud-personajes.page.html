@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="home" slot="start"></ion-back-button>
+    </ion-button>
+    <ion-title>
+      Mantenedor Personajes CRUD SQLite 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <form [formGroup]="mainForm" (ngSubmit)="storeData()">
+      <ion-item>
+        <ion-label position="floating">Monito</ion-label>
+        <ion-input formControlName="monito" type="text" required></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">Estado De Salud</ion-label>
+        <ion-input formControlName="estado_salud" type="text" required></ion-input>
+      </ion-item> 
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">
+            Registrar personajes
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Personajes
+    </ion-list-header>
+
+    <ion-item lines="inset" *ngFor="let monitoss of Data">
+      <ion-label>
+        <h5>{{ monitoss.monito }}</h5>
+        <p>{{ monitoss.estado_salud }}</p>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <ion-icon name="create" style="zoom: 2.0;" [routerLink]="['/monitoss/',monitoss.id]"></ion-icon>
+        <ion-icon name="trash" style="zoom: 2.0;" (click)="deleteMonitoss(monitoss.id)"></ion-icon>
+      </div>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
+<app-footer></app-footer>

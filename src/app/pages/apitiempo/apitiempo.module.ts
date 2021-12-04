@@ -13,7 +13,8 @@ import { ApitiempoPage } from './apitiempo.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ApitiempoPageRoutingModule
+    ApitiempoPageRoutingModule,
+    
   ],
   declarations: [ApitiempoPage]
 })

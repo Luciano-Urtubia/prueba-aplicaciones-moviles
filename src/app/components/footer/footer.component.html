@@ -1,3 +1,23 @@
-<p>
-  footer works!
-</p>
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="add-circle-outline"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button>
+      <ion-icon name="cloudy-night" (click)="goToClima()"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-icon name="cash-outline" (click)="goToConversor()"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-icon name="person" (click)="goToCrudPersonajes()"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-icon name="book" (click)="goToListaPersonajes()"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-icon name="home-outline" (click)="goToHome()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+

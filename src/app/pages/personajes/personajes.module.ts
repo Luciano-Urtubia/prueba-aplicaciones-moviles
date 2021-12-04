@@ -13,7 +13,8 @@ import { PersonajesPage } from './personajes.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    PersonajesPageRoutingModule
+    PersonajesPageRoutingModule,
+    
   ],
   declarations: [PersonajesPage]
 })
